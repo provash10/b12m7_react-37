@@ -1,0 +1,8 @@
+37-9 Thinking in React way and Homework
+-----------------------------------------
+1. event trigger
+2. state
+3. data load from api
+4. loop through to display data
+5. why we use key prop
+
