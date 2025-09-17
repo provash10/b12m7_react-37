@@ -1,3 +1,9 @@
+37-7 (Recap) Load dynamic data using async await
+------------------------------------------------
+Friends.jsx   Friend.jsx  Posts.jsx 
+
+App.jsx ------->>>
+======================
 
 import Users from './Users';
 import Batsman from './Batsman';
@@ -81,3 +87,32 @@ function App() {
 
 export default App
 
+=================>>>>Posts.jsx
+import { use } from "react"
+import Post from './Post';
+
+export default function Posts({postsPromise}){
+
+    const posts = use(postsPromise);
+    console.log(posts);
+
+    return(
+        <div className="card">
+            <h2>All Post are Here : {posts.length}</h2>
+            {
+                posts.map(post => <Post key={post.id} post={post}></Post>)
+            }
+        </div>
+    )
+}
+
+=======================>>>Post.jsx
+export default function Post({post}){
+
+    return(
+        <div className="card">
+            <p>{post.title}</p>
+            <p>{post.body}</p>
+        </div>
+    )
+}
