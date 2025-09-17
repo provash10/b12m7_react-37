@@ -1,2 +1,120 @@
 37-4 Understand the concept of useState and react hooks
 ---------------------------------------------------------
+
+
+import Batsman from './Batsman';
+import Counter from './Counter';
+import './App.css'
+
+function App() {
+
+  function handleClick(){
+    alert('I am clicked..')
+  }
+  function handleClick2(){
+    alert('I am clicked 2.')
+  }
+  
+  const handleClick3=()=>{
+    alert('Clicked 3 !!!')
+  }
+
+  // const handleadd5=(num)=>{
+  //   const newNum = num + 5;
+  //   alert(newNum);
+  // }
+
+   const handleadd6=(num)=>{
+    const newNum = num + 13;
+    alert(newNum);
+  }
+
+  return (
+    <>
+      <h1>Vite + React</h1>
+
+      <Batsman></Batsman>
+      <Counter></Counter>
+      
+
+      {/* <button onclick = "handleClick()">Click Me</button> */}
+      <button onClick={handleClick}>Click Me</button>
+      <button onClick={handleClick2}>Click Me 2</button>
+      <button onClick={handleClick3}>Click Me 3</button>
+      <button onClick={handleClick}>Click Me 4</button>
+
+      {/* <button onClick={handleadd5(7)}>Click Add 5</button> */}
+      <button onClick={()=>handleadd6(27)}>Click Add 6</button> 
+    </>
+  )
+}
+
+export default App
+
+-------->>>>Batsman.jsx
+import { useState } from "react"
+
+export default function Batsman(){
+    const [runs, setRuns] = useState(0);
+    const [sixes, setSixes] = useState(0);
+    const [four, setFour] = useState(0);
+
+    const handleSingle =()=>{
+        console.log(handleSingle);
+        const updatedSingle = runs + 1;
+        setRuns(updatedSingle);
+    }
+    const handleDouble=()=>{
+        console.log(handleDouble);
+        const updatedDouble = runs + 2;
+        setRuns(updatedDouble);
+    }
+    const handleTriple=()=>{
+        console.log(handleTriple);
+        const updatedTriple = runs + 3;
+        setRuns(updatedTriple);
+    }
+    const handleFour=()=>{
+        console.log(handleFour);
+        const updatedFour = runs + 4;
+        const totalFour = four + 1;
+        setRuns(updatedFour);
+        setFour(totalFour);
+    }
+    const handleFive=()=>{
+        console.log(handleFive);
+        const updatedFive = runs + 5;
+        setRuns(updatedFive);
+    }
+    const handleSix=()=>{
+        console.log(handleSix);
+        const updatedSix = runs + 6;
+        const totalSix= sixes + 1;
+        setRuns(updatedSix);
+        setSixes(totalSix);
+    }
+
+    return (
+    <>
+    <div>
+        <h3>Player : BD Batsman</h3>
+        {
+            runs>50 && <p>Your Score : 50</p>
+        }
+        {
+            runs>100 && <p>Your Score : 100</p>
+        }
+        <p>Six : {sixes}</p>
+        <p>Four : {four}</p>
+
+        <h1>Score : {runs} </h1>
+        <button onClick={handleSingle} >Single</button>
+        <button onClick={handleDouble} >Double</button>
+        <button onClick={handleTriple} >Triple</button>
+        <button onClick={handleFour} >Four</button>
+        <button onClick={handleFive} >Five</button>
+        <button onClick={handleSix} >Six</button>
+    </div>
+    </>
+    )
+}
