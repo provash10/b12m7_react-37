@@ -1,0 +1,12 @@
+37-10 Let AI Guide You Through Core Concepts
+--------------------------------------------------
+
+AI Details
+1. Gemini
+
+a. I am learning React JS. Give me the list of core concepts in React for beginners and give me a mind map to revise the core concepts
+b. difference between useState and useEffect
+c. explain the use() introduced in react 19
+d. 10 common mistakes for bigginners in React JS
+e. why key prop is important while rendering a list i React 
+f. Give me a summery all react Hooks
