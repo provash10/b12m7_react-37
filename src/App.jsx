@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  function handleClick(){
+    alert('I am clicked..')
+  }
+  function handleClick2(){
+    alert('I am clicked 2.')
+  }
+  
+  const handleClick3=()=>{
+    alert('Clicked 3 !!!')
+  }
+
+  const handleadd5=(num)=>{
+    const newNum = num + 5;
+    alert(newNum);
+  }
+
+   const handleadd6=(num)=>{
+    const newNum = num + 13;
+    alert(newNum);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* <button onclick = "handleClick()">Click Me</button> */}
+      <button onClick={handleClick}>Click Me</button>
+      <button onClick={handleClick2}>Click Me 2</button>
+      <button onClick={handleClick3}>Click Me 3</button>
+      <button onClick={handleClick}>Click Me 4</button>
+
+      <button onClick={handleadd5(7)}>Click Add 5</button>
+      <button onClick={()=>handleadd6(27)}>Click Add 6</button> 
     </>
   )
 }
 
 export default App
+

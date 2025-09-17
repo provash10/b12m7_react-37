@@ -1,0 +1,27 @@
+37-1 Module Introduction and Vite Project Overview
+------------------------------------------------------
+
+1. React---> vite
+2. Component   first letter Uppercase, class= className
+3. JSX ---> XML {}
+4. props
+5. Conditional Rendering
+6. Array of data 
+
+google--> vite-React >> https://vite.dev/guide/
+npm create vite@latest
+# npm 7+, extra double-dash is needed:
+npm create vite@latest my-vue-app -- --template vue/react
+
+cmd
+>cd \Projects
+
+c:\Projects>npm create vite@latest project_name -- --template react
+
+following done/  
+
+>code . (optional)
+
+npm run deb 
+
+**** package json
