@@ -1,3 +1,15 @@
+37-6 (Recap) Load dynamic data, API call using use()
+-------------------------------------------------------
+User.jsx    Friends.jsx
+
+1. just write a simple fetch with json conversion
+2. Wrap the data loading component under suspense
+
+const fetchFriends = () => {
+
+}
+
+=====================
 
 import Users from './Users';
 import Batsman from './Batsman';
@@ -69,4 +81,39 @@ function App() {
 }
 
 export default App
+
+
+==================Users.jsx
+
+import { use } from "react"
+
+export default function Users({fetchUsers}){
+
+    const users = use(fetchUsers);
+    console.log(users); //loading checked ok
+
+    return(
+        <div className="card">
+        <h3>Users :{users.length} </h3>
+        </div>
+    )
+}
+
+==============Friends.jsx
+
+import { use } from "react"
+
+export default function Friends({friendsPromise}){
+
+    const friends = use(friendsPromise);
+    console.log(friends);
+
+    return(
+        <div className="card">
+            <h3>Friends: {friends.length}</h3>
+
+        </div>
+    )
+}
+
 
